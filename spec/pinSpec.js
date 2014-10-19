@@ -17,7 +17,7 @@ it('should change status when hit', function(){
 
 describe('Frame', function() {
 
-	beforeEach(function(){
+	beforeEach(function() {
 	frame = new Frame
 	pin = new Pin
 	});
@@ -33,6 +33,12 @@ describe('Frame', function() {
 	it('should be able to knock down a number of pins', function() {
 	frame.bowl(0, 4)
 	expect(frame.pins.length).toEqual(6);
+	});
+
+	it('Should add the result to the score', function() {
+	frame1 = new Frame;
+	frame.bowl(0, 4)
+	expect(frame.score).toEqual([4]);
 	});
 
 });

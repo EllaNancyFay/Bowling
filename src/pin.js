@@ -7,7 +7,8 @@ Pin.prototype.hit = function() {
 };
 
 function Frame() {
-	this.pins = []
+	this.pins = [];
+	this.score = [];
 
 	for (i=0; i < 10; i++){
 	this.pins.push(pin)};
@@ -15,4 +16,5 @@ function Frame() {
 
 Frame.prototype.bowl = function(index, number) {
 	this.pins.splice(index, number);
+	this.score.push(number)
 };
