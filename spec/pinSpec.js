@@ -17,8 +17,15 @@ it('should change status when hit', function(){
 
 describe('Frame', function() {
 	frame = new Frame;
+	pin = new Pin;
+
 	it('should hold pins', function() {
-		expect(frame.pins).toEqual([]);
+		expect(frame.pins instanceof Array).toBe(true);
+	});
+
+	it('should hold 10 ten pins', function() {
+		frame.addPins(pin);
+		expect(frame.pins.length).toEqual(10);
 	});
 
 });
