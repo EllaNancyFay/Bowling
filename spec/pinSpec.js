@@ -14,3 +14,11 @@ it('should change status when hit', function(){
 });
 
 }); 
+
+describe('Frame', function() {
+	frame = new Frame;
+	it('should hold pins', function() {
+		expect(frame.pins).toEqual([]);
+	});
+
+});
