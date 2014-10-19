@@ -16,16 +16,23 @@ it('should change status when hit', function(){
 }); 
 
 describe('Frame', function() {
-	frame = new Frame;
-	pin = new Pin;
+
+	beforeEach(function(){
+	frame = new Frame
+	pin = new Pin
+	});
 
 	it('should hold pins', function() {
-		expect(frame.pins instanceof Array).toBe(true);
+	expect(frame.pins instanceof Array).toBe(true);
 	});
 
 	it('should hold 10 ten pins', function() {
-		frame.addPins(pin);
-		expect(frame.pins.length).toEqual(10);
+	expect(frame.pins.length).toEqual(10);
+	});
+
+	it('should be able to knock down a number of pins', function() {
+	frame.bowl(0, 4)
+	expect(frame.pins.length).toEqual(6);
 	});
 
 });

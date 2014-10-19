@@ -7,10 +7,12 @@ Pin.prototype.hit = function() {
 };
 
 function Frame() {
-	this.pins = [];
-};
+	this.pins = []
 
-Frame.prototype.addPins = function(pin) {
 	for (i=0; i < 10; i++){
 	this.pins.push(pin)};
+};
+
+Frame.prototype.bowl = function(index, number) {
+	this.pins.splice(index, number);
 };
