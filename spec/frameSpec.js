@@ -4,13 +4,20 @@ describe('Frame', function() {
 		frame = new Frame
 	});
 
-	it('should hold 10 ten pins', function() {
-		expect(frame.pins).toEqual(10);
+	it("should hold it's score", function() {
+		expect(frame.score instanceof Array).toBe(true)
 	});
 
-	it('pins should get knocked down', function() {
+	it('should hold the result of each bowl in the score', function() {
 		frame.bowl(4)
-		expect(frame.pins).toEqual(6);
+		expect(frame.score).toEqual([4])
+	});
+
+	it("should know it's total score", function() {
+		frame.bowl(1)
+		frame.bowl(3)
+		frame.tally()
+		expect(frame.totalScore).toEqual(4)
 	});
 
 });
