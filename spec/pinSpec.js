@@ -55,6 +55,11 @@ describe('Frame', function() {
 		expect(frame3.score.sum()).toEqual(6);
 	});
 
+	it('should move onto the next frame when strike', function() {
+		frame4 = new Frame
+		frame4.bowl(0, 10)
+		expect(frame.go()).toEqual('over');
+	});
 
 
 });

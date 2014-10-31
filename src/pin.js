@@ -20,7 +20,7 @@ Frame.prototype.bowl = function(index, number) {
 };
 
 Frame.prototype.go = function() {
-	if(this.score.length == 2 ) {
+	if(this.score.length == 2 || [10]) {
 	return 'over'}
 };
 
