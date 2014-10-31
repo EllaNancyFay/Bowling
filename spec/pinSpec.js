@@ -35,10 +35,17 @@ describe('Frame', function() {
 	expect(frame.pins.length).toEqual(6);
 	});
 
-	it('Should add the result to the score', function() {
+	it('should add the result to the score', function() {
 	frame1 = new Frame;
-	frame.bowl(0, 4)
-	expect(frame.score).toEqual([4]);
+	frame1.bowl(0, 4)
+	expect(frame1.score).toEqual([4]);
+	});
+
+	it('should only have two bowls', function() {
+	frame2 = new Frame;
+	frame2.bowl(0, 3);
+	frame2.bowl(0, 5);
+	expect(frame2.go()).toEqual('over');
 	});
 
 });
