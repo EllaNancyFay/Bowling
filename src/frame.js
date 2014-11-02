@@ -1,7 +1,7 @@
 function Frame() {
 	this.score = [];
 	this.totalScore = 0;
-	this.status = null;
+	this.specialScore = null;
 };
 
 Frame.prototype.bowl = function(number) {
@@ -15,4 +15,9 @@ Array.prototype.sum = function() {
 
 Frame.prototype.tally = function() {
 	this.totalScore = this.score.sum()
+};
+
+Frame.prototype.setSpecialScore = function() {
+	if (this.score.indexOf('10') != -1) {
+		this.specialScore = 'strike' }
 };

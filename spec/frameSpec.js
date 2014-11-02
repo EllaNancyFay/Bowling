@@ -20,8 +20,14 @@ describe('Frame', function() {
 		expect(frame.totalScore).toEqual(4)
 	});
 
-	it("should have a status", function() {
-		expect(frame.status).toEqual(null);
+	it("should keep track of special scores", function() {
+		expect(frame.specialScore).toEqual(null);
+	});
+
+	it("should know when a strike is scored", function () {
+		frame.bowl(10)
+		frame.setSpecialScore()
+		expect(frame.specialScore).toEqual('strike')
 	});
 
 });
