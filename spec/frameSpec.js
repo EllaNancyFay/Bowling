@@ -4,11 +4,11 @@ describe('Frame', function() {
 		frame = new Frame
 	});
 
-	it("should hold it's score", function() {
+	it("should be able to hold a score", function() {
 		expect(frame.score instanceof Array).toBe(true)
 	});
 
-	it('should hold the result of each bowl in the score', function() {
+	it('should know the result of each bowl', function() {
 		frame.bowl(4)
 		expect(frame.score).toEqual([4])
 	});
@@ -18,6 +18,10 @@ describe('Frame', function() {
 		frame.bowl(3)
 		frame.tally()
 		expect(frame.totalScore).toEqual(4)
+	});
+
+	it("should have a status", function() {
+		expect(frame.status).toEqual(null);
 	});
 
 });

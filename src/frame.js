@@ -1,6 +1,7 @@
 function Frame() {
 	this.score = [];
 	this.totalScore = 0;
+	this.status = null;
 };
 
 Frame.prototype.bowl = function(number) {
