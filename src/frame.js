@@ -18,6 +18,8 @@ Frame.prototype.tally = function() {
 };
 
 Frame.prototype.setSpecialScore = function() {
-	if (this.score.indexOf('10') != -1) {
+	if (this.score.indexOf(10) != -1) {
 		this.specialScore = 'strike' }
+	else if (this.totalScore === 10) {
+		this.specialScore = 'spare' }
 };
