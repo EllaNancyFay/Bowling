@@ -7,3 +7,10 @@ Game.prototype.setup = function() {
 	this.frames[i] = new Frame(i);
 	};
 };
+
+Game.prototype.playFrame = function(bowlOne, bowlTwo) {
+  var frame = new Frame();
+  frame.bowl(bowlOne);
+  frame.bowl(bowlTwo);
+  this.frames.push(frame.score);
+};
