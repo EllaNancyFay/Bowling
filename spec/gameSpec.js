@@ -16,14 +16,21 @@ describe('Game', function() {
   });
 
   it('should be able to play a frame', function() {
-    game.playFrame(2, 4)
-    expect(game.frames).toEqual([[2, 4]])
+    game.playFrame(2, 4);
+    expect(game.frames).toEqual([6]);
   });
 
   it('should be able to play multiple frames', function() {
-    game.playFrame(3, 3)
-    game.playFrame(4, 6)
-    expect(game.frames).toEqual([[3, 3], [4, 6]])
+    game.playFrame(3, 3);
+    game.playFrame(4, 6);
+    expect(game.frames).toEqual([6, 10]);
+  });
+
+  it('should know the entire score of the frames', function() {
+    game.playFrame(1, 1);
+    game.playFrame(2, 2);
+    game.sumScore();
+    expect(game.entireScore).toEqual(6);
   });
 
 });

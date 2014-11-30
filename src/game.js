@@ -1,5 +1,6 @@
 function Game() {
 	this.frames = [];
+  this.entireScore = 0;
 };
 
 Game.prototype.setup = function() {
@@ -12,5 +13,10 @@ Game.prototype.playFrame = function(bowlOne, bowlTwo) {
   var frame = new Frame();
   frame.bowl(bowlOne);
   frame.bowl(bowlTwo);
-  this.frames.push(frame.score);
+  frame.tally();
+  this.frames.push(frame.totalScore);
+};
+
+Game.prototype.sumScore = function() {
+  this.entireScore = this.frames.sum();
 };

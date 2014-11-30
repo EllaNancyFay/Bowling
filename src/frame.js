@@ -14,7 +14,7 @@ Array.prototype.sum = function() {
 };
 
 Frame.prototype.tally = function() {
-	this.totalScore = this.score.sum()
+	this.totalScore = this.score.sum();
 };
 
 Frame.prototype.setSpecialScore = function() {
