@@ -20,4 +20,10 @@ describe('Game', function() {
     expect(game.frames).toEqual([[2, 4]])
   });
 
+  it('should be able to play multiple frames', function() {
+    game.playFrame(3, 3)
+    game.playFrame(4, 6)
+    expect(game.frames).toEqual([[3, 3], [4, 6]])
+  });
+
 });
