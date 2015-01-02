@@ -36,7 +36,6 @@ describe('Frame', function() {
 		frame.bowl(3);
 		frame.bowl(7);
 		frame.tally();
-		frame.setSpecialScore();
 		expect(frame.specialScore).toEqual('spare');
 	});
 

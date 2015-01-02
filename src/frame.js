@@ -15,10 +15,11 @@ Array.prototype.sum = function() {
 
 Frame.prototype.tally = function() {
 	this.totalScore = this.score.sum();
+	this.setSpecialScore();
 };
 
 Frame.prototype.setSpecialScore = function() {
-	if (this.score.indexOf(10) != -1) {
+	if (this.score[0] === 10) {
 		this.specialScore = 'strike' }
 	else if (this.totalScore === 10) {
 		this.specialScore = 'spare' }

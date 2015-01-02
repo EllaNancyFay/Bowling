@@ -33,4 +33,9 @@ describe('Game', function() {
     expect(game.entireScore).toEqual(6);
   });
 
+  it('should know if a frame has a special score', function() {
+    game.playFrame(2, 8);
+    
+  });
+
 });
