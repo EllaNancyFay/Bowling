@@ -40,7 +40,22 @@ describe('Game', function() {
     game.frames[0].tally();
     game.applyBonus();
     expect(game.bonuses).toEqual([2]);
-    console.log(game.bonuses)
+  });
+
+  it('saves the bonus score when consecutive strikes are scored', function() {
+    game.frames[0].bowl(10);
+ 
+    game.frames[1].bowl(10);
+   
+    game.frames[2].bowl(10);
+  
+    game.frames[3].bowl(1);
+    game.frames[3].bowl(1);
+    game.frames[0].tally();
+    game.frames[1].tally();
+    game.frames[2].tally();
+    game.applyBonus();
+    expect(game.bonuses).toEqual([20, 11, 2])
   });
 
 });
