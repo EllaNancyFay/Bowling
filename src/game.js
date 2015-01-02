@@ -7,17 +7,16 @@ function Game() {
   };
 };  
 
-
 Game.prototype.playFrame = function(bowlOne, bowlTwo) {
   frame.bowl(bowlOne);
   frame.bowl(bowlTwo);
   frame.tally();
 };
 
-// Game.prototype.applyBonus = function() {
-//   for (var i=0; i < 9; i++) {
-//     if (this.frames[i].sum() === 10) {
-//       this.bonuses.push(this.frames[i + 1][0])
-//     };
-//   };
-// };
+Game.prototype.applyBonus = function() {
+  for (var i=0; i < 9; i++) {
+    if (this.frames[i].specialScore === 'spare') {
+      this.bonuses.push(this.frames[i + 1].score[0])
+    };
+  };
+};
