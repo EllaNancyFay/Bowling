@@ -22,15 +22,25 @@ describe('Game', function() {
     expect(game.frames[0].score).toEqual([3, 4]);
   });
 
-  it('should save the bonus score when a spare is scored', function() {
+  it('saves the bonus score when a spare is scored', function() {
     game.frames[0].bowl(6);
     game.frames[0].bowl(4);
-    console.log(game.frames[0].specialScore)
     game.frames[1].bowl(1);
     game.frames[1].bowl(4);
     game.frames[0].tally();
     game.applyBonus();
     expect(game.bonuses).toEqual([1]);  
+  });
+
+  it('saves the bonus score when a strike is scored', function() {
+    game.frames[0].bowl(10);
+    game.frames[0].bowl(0);
+    game.frames[1].bowl(1);
+    game.frames[1].bowl(1);
+    game.frames[0].tally();
+    game.applyBonus();
+    expect(game.bonuses).toEqual([2]);
+    console.log(game.bonuses)
   });
 
 });

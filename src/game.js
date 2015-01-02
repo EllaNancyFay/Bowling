@@ -17,6 +17,10 @@ Game.prototype.applyBonus = function() {
   for (var i=0; i < 9; i++) {
     if (this.frames[i].specialScore === 'spare') {
       this.bonuses.push(this.frames[i + 1].score[0])
-    };
+    }
+
+    if (this.frames[i].specialScore === 'strike') {
+      this.bonuses.push(this.frames[i + 1].score.sum())
+    }
   };
 };
