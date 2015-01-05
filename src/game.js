@@ -1,6 +1,7 @@
 function Game() {
 	this.frames = [];
   this.bonuses = [];
+  this.totalScore = [];
 
   for(var i = 0; i <= 9; i++) {
    this.frames[i] = new Frame(i);
@@ -26,5 +27,12 @@ Game.prototype.applyBonus = function() {
     }
   };
 };
+
+Game.prototype.pushTotal = function() {
+  for (var i=0; i < 10; i++) {
+    this.totalScore.push(this.frames[i].score.sum())
+  };
+};
+
 
 

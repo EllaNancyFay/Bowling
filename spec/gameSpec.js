@@ -62,4 +62,13 @@ describe('Game', function() {
     expect(game.frames[9].score).toEqual([10, 10, 10]);
   });
 
+  it('should be able to calculate the sum of all frames played', function() {
+    game.frames[0].bowl(1);
+    game.frames[0].bowl(1);
+    game.frames[1].bowl(1);
+    game.frames[1].bowl(1);
+    game.pushTotal(frame);
+    expect(game.totalScore.sum()).toEqual(4);
+  });
+
 });
