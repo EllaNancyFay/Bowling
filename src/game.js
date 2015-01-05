@@ -7,12 +7,6 @@ function Game() {
   };
 };  
 
-Game.prototype.playFrame = function(bowlOne, bowlTwo) {
-  frame.bowl(bowlOne);
-  frame.bowl(bowlTwo);
-  frame.tally();
-};
-
 Game.prototype.applyBonus = function() {
   for (var i=0; i < 9; i++) {
     if (this.frames[i].specialScore === 'spare') {
@@ -26,7 +20,5 @@ Game.prototype.applyBonus = function() {
     if (this.frames[i].specialScore === 'strike' && this.frames[i + 1].specialScore === 'strike') {
       this.bonuses.push(this.frames[i + 1].score[0] + this.frames[i + 2].score[0])
     }
-
   };
-
 };

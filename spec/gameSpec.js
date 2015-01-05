@@ -34,7 +34,6 @@ describe('Game', function() {
 
   it('saves the bonus score when a strike is scored', function() {
     game.frames[0].bowl(10);
-    game.frames[0].bowl(0);
     game.frames[1].bowl(1);
     game.frames[1].bowl(1);
     game.frames[0].tally();
@@ -44,11 +43,8 @@ describe('Game', function() {
 
   it('saves the bonus score when consecutive strikes are scored', function() {
     game.frames[0].bowl(10);
- 
     game.frames[1].bowl(10);
-   
     game.frames[2].bowl(10);
-  
     game.frames[3].bowl(1);
     game.frames[3].bowl(1);
     game.frames[0].tally();
