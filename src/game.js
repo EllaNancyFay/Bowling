@@ -22,3 +22,5 @@ Game.prototype.applyBonus = function() {
     }
   };
 };
+
+

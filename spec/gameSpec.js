@@ -54,4 +54,12 @@ describe('Game', function() {
     expect(game.bonuses).toEqual([20, 11, 2])
   });
 
+  it('should add the result of the bonus ball to the score', function() {
+    game.frames[9].bowl(10);
+    game.frames[9].bowl(10);
+    game.frames[9].tally();
+    game.frames[9].bonusBall(10);
+    expect(game.frames[9].score).toEqual([10, 10, 10]);
+  });
+
 });

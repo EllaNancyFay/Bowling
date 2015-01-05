@@ -24,3 +24,9 @@ Frame.prototype.setSpecialScore = function() {
 	else if (this.totalScore === 10) {
 		this.specialScore = 'spare' }
 };
+
+Frame.prototype.bonusBall = function(number) {
+	if (this.score.length === 2 && this.specialScore != null) {
+		this.score.push(number)
+	};
+};
