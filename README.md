@@ -1,27 +1,62 @@
-Task: 
+## BowlingJS
+
+##Task
 
 Count and sum the scores of a bowling game of one player(in javascript).
 
-A bowling game consists of 10 frames in which the player tries to knock down the 10 pins. In every frame the player can throw one or two times. The actual number depends on strikes and spares. The score of a frame is the number of knocked down pins plus bonuses for strikes and spares. After every frame the 10 pins are reseted.
+A bowling game consists of 10 frames. In each frame the player has one or two bowls to knock down 10 pins. The score of a frame is the number of knocked down pins plus bonuses for strikes(the score of the next two bowls) and spares(the score of the next bowl). After every frame the 10 pins are reset.
 
-Strikes
 
-The player has a strike of he knocks down all 10 pins with the first roll in a frame. The frame ends immediately (since there are no pins left for a second roll). The bonus for that frame is the number of pins knocked down by the next two rolls. That is the next frame, except if the player rolls a strike again.
+### Languages/Platforms/Tools
 
-Spares
+* JavaScript
+* Jasmine
+* JavaScript Console
 
-The player has a spare if the knocks down all 10 pins with the two roles of a frame. The bonus for that frame is the number of pins knocked down by the next roll (first role of next frame).
+### How to use
 
-10th frame
+Clone this repo:
+```sh
+$ git clone https://github.com/EllaNancyFay/Bowling.git
+```
 
-If the player rolls a strike or spare in the 10th frame he can roll the additional balls for the bonus. But he can never roll more than 3 balls in the 10th frame. The additional rolls only count for the bonus not for the regular frame count.
+Change into the directory:
+```sh
+$ cd Bowling
+```
 
-10, 10, 10 in the 10th frame gives 30 points (10 points for the regular first strike and 20 points for the bonus)
-1, 9, 10 in the 10th frame gives 20 points (10 points for the regular spare and 10 points for the bonus)
-Gutter Game
+Run the Jasmine tests:
+```sh
+$ open SpecRunner.html
+```
 
-A Gutter Game is when the player never hits a pin (20 zero scores).
+To run the code (e.g Perfect Game):
 
-Perfect Game
+Run the tests (as above) and open the console.
+```sh
+$ game = new Game;
+$ game.frames[0].bowl(10)
+$ game.frames[1].bowl(10)
+$ game.frames[2].bowl(10)
+$ game.frames[3].bowl(10)
+$ game.frames[4].bowl(10)
+$ game.frames[5].bowl(10)
+$ game.frames[6].bowl(10)
+$ game.frames[7].bowl(10)
+$ game.frames[8].bowl(10)
+$ game.frames[9].bowl(10)
+$ game.frames[9].bowl(10)
+$ game.applyBonus();
+$ game.frames[9].bonusBall(10);
+$ game.pushTotal();
+$ game.calculateTotal(); 
+    
+```
 
-A Perfect Game is when the player rolls 12 strikes (10 regular strikes and 2 strikes for the bonus in the 10th frame). The Perfect Game scores to 300 points.
+I have implemented a bowl method with which you can specify number of pins hit.
+
+### Improvements
+
+* Clean up applyBonuses method.
+* Further testing of diferent scoring secnarios to ensure all are covered.
+* Name frames rather than using [0] index to specify frames.(e.g Frame1 rather than game.frames[0]).
