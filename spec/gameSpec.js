@@ -96,8 +96,6 @@ describe('Game', function() {
     game.applyBonus();
     game.frames[9].bonusBall(10);
     game.pushTotal(frame);
-    console.log(game.bonuses)
-    console.log(game.totalScore)
     expect(game.calculateTotal()).toEqual(300);
   });
 
