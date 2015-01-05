@@ -15,13 +15,6 @@ describe('Frame', function() {
 		expect(frame.score).toEqual([4]);
 	});
 
-	it('should know total score', function() {
-		frame.bowl(1);
-		frame.bowl(3);
-		frame.tally();
-		expect(frame.totalScore).toEqual(4);
-	});
-
 	it('should keep track of special scores', function() {
 		expect(frame.specialScore).toEqual(null);
 	});

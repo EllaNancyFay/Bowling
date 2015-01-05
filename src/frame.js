@@ -1,6 +1,5 @@
 function Frame() {
 	this.score = [];
-	this.totalScore = 0;
 	this.specialScore = null;
 };
 
