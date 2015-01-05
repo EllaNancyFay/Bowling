@@ -83,16 +83,7 @@ describe('Game', function() {
     game.frames[8].bowl(10);
     game.frames[9].bowl(10);
     game.frames[9].bowl(10);
-    game.frames[0].tally();
-    game.frames[1].tally();
-    game.frames[2].tally();
-    game.frames[3].tally();
-    game.frames[4].tally();
-    game.frames[5].tally();
-    game.frames[6].tally();
-    game.frames[7].tally();
-    game.frames[8].tally();
-    game.frames[9].tally();
+    game.tallyFrames();
     game.applyBonus();
     game.frames[9].bonusBall(10);
     game.pushTotal(frame);

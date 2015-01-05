@@ -47,5 +47,10 @@ Game.prototype.calculateTotal = function() {
   return (this.bonuses.sum() + this.totalScore.sum())
 };
 
+Game.prototype.tallyFrames = function() {
+ for (var i=0; i < 10; i++) {
+  this.frames[i].tally();
+};
 
+};
 
