@@ -20,6 +20,10 @@ Game.prototype.applyBonus = function() {
     if (this.frames[i].specialScore === 'strike' && this.frames[i + 1].specialScore === 'strike') {
       this.bonuses.push(this.frames[i + 1].score[0] + this.frames[i + 2].score[0])
     }
+
+    else {
+      return 'No bonus'
+    }
   };
 };
 

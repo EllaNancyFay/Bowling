@@ -28,5 +28,9 @@ Frame.prototype.setSpecialScore = function() {
 Frame.prototype.bonusBall = function(number) {
 	if (this.score.length === 2 && this.specialScore != null) {
 		this.score.push(number)
-	};
+	}
+
+	else {
+		return 'Game Over'
+	}
 };
