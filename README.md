@@ -46,6 +46,7 @@ $ game.frames[7].bowl(10)
 $ game.frames[8].bowl(10)
 $ game.frames[9].bowl(10)
 $ game.frames[9].bowl(10)
+$ game.tallyFrames();
 $ game.applyBonus();
 $ game.frames[9].bonusBall(10);
 $ game.pushTotal();
