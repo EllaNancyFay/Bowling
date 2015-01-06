@@ -8,10 +8,6 @@ describe('Game', function() {
     frame = new Frame();
   });
 
-  it('should have frames', function() {
-   	expect(game.frames instanceof Array).toBe(true);
-  });
-
   it('should have a total of 10 frames', function() {
   	expect(game.frames.length).toEqual(10);
   });
