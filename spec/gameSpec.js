@@ -4,12 +4,12 @@ describe('Game', function() {
   var frame;
 
   beforeEach(function() {
-    game = new Game();
+    game = new Game(Frame);
     frame = new Frame();
   });
 
   it('should have a total of 10 frames', function() {
-  	expect(game.frames.length).toEqual(10);
+    expect(game.frames.length).toEqual(10);
   });
 
   it('should be able to play a frame', function() {
