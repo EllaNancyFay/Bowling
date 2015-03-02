@@ -21,7 +21,6 @@ Game.prototype.handleSpare = function(i) {
   if (this.frames[i].specialScore === 'spare') {
     this.bonuses.push(this.frames[i + 1].score[0])
   }
-
   else {
     return 'No bonus';
   }
@@ -31,11 +30,9 @@ Game.prototype.handleStrike = function(i) {
   if (i === 8 && this.frames[8].specialScore === 'strike') {
     this.bonuses.push(this.frames[9].score.sum());
   }
-
   else if (this.frames[i].specialScore === 'strike' && this.frames[i + 1].score[0] != 10) {
     this.bonuses.push(this.frames[i + 1].score.sum())
   }
-
   else {
     return 'No bonus';
   }
